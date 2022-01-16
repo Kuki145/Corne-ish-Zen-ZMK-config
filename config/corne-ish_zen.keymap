@@ -10,8 +10,9 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define QWERTY 0
-#define LOWER 1
-#define RAISE 2
+#define COLEMK 1
+#define LOWER 2
+#define RAISE 3
 
 / {
         keymap {
@@ -31,6 +32,21 @@
                   &kp LGUI &mo LOWER &kp SPACE   &kp RET &mo RAISE &kp RALT
                         >;
                 };
+
+                colemak_layer {
+                        label = "COLEMK";
+// -----------------------------------------------------------------------------------------
+// |  ESC |  Q  |  W  |  F  |  D  |  B  |    |  J  |  L   |  U  |  Y  |  '  | BKSP  |
+// | CTRL |  A  |  R  |  S  |  T  |  G w |    |  M  |  N   |  E  |  I  |  O  |  ;    |
+// | SHFT |  Z  |  X  |  C  |  V  |  P  |    |  K  |  H   |  ,  |  .  |  /  | SHFT  |
+//                    | GUI | LWR | SPC |    | ENT | RSE  | ALT |
+                        bindings = <
+   &trans &kp Q &kp W &kp F &kp D &kp B   &kp J &kp L  &kp U     &kp Y   &kp SQT  &trans
+   &trans &kp A &kp R &kp S &kp T &kp G   &kp M &kp N  &kp E     &kp I   &kp O    &kp SEMI
+   &trans &kp Z &kp X &kp C &kp V &kp P   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &trans
+                  &trans &trans &trans      &trans &trans &trans
+                        >;
+                };
                 lower_layer {
                         label = "NUMBER";
 // -----------------------------------------------------------------------------------------
@@ -41,7 +57,7 @@
                         bindings = <
    &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
    &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
+   &kp LSHFT  &tog COLEMK  &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
                           	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
                         >;
                 };
