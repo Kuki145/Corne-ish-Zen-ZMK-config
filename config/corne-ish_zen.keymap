@@ -10,7 +10,7 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define QWERTY 0
-#define BACKUP 1
+#define COLEMK 1
 #define LOWER 2
 #define RAISE 3
 
@@ -33,8 +33,8 @@
                         >;
                 };
 
-                backup_layer {
-                        label = "BACKUP";
+                colemak_layer {
+                        label = "COLEMK";
 // -----------------------------------------------------------------------------------------
 // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
 // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
@@ -58,7 +58,7 @@
                         bindings = <
    &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
    &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &tog BACKUP  &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
+   &kp LSHFT  &tog COLEMK  &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
                           	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
                         >;
                 };
