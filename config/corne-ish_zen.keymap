@@ -37,12 +37,12 @@
                         label = "COLEMK";
 // -----------------------------------------------------------------------------------------
 // |  TAB |  Q  |  W  |  F  |  D  |  B  |    |  J  |  L   |  U  |  Y  |  '  | BKSP |
-// | CTRL |  A  |  R  |  S  |  T  |  G  |    |  H  |  J   |  K  |  L  |  ;  |  '   |
+// | CTRL |  A  |  R  |  S  |  T  |  G  |    |  M  |  N   |  E  |  I  |  O  |  ;   |
 // | SHFT |  Z  |  X  |  C  |  V  |  P  |    |  K  |  H   |  ,  |  .  |  /  | SHFT |
 //                    | GUI | LWR | SPC |    | ENT | RSE  | ALT |
                         bindings = <
    &kp TAB  &kp Q &kp W &kp F &kp D &kp B     &kp J &kp L  &kp U     &kp Y   &kp SQT    &kp BSPC
-   &trans   &kp A &kp R &kp S &kp T &kp G     &kp H &kp J  &kp K     &kp L   &kp SEMI   &kp SQT
+   &trans   &kp A &kp R &kp S &kp T &kp G     &kp M &kp N  &kp E     &kp I   &kp O      &kp SEMI
    &trans   &kp Z &kp X &kp C &kp V &kp P     &kp K &kp H  &kp COMMA &kp DOT &kp FSLH   &kp RSHFT
                   &trans &trans &trans           &kp RET &trans &kp RALT
                         >;
