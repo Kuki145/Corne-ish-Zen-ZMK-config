@@ -9,31 +9,15 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-#define QWERTY 0
-#define COLEMK 1
-#define LOWER 2
-#define RAISE 3
+#define COLEMK 0
+#define LOWER 1
+#define RAISE 2
 
 / {
         keymap {
                 compatible = "zmk,keymap";
 
                 default_layer {
-                        label = "QWERTY";
-// -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | SHFT |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-                        bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-                  &kp LGUI &mo LOWER &kp SPACE   &kp RET &mo RAISE &kp RALT
-                        >;
-                };
-
-                colemak_layer {
                         label = "COLEMK";
 // -----------------------------------------------------------------------------------------
 // |  TAB |  K  |  W  |  F  |  D  |  Q  |    |  J  |  L   |  U  |  Y  |  '  | BKSP |
@@ -41,10 +25,10 @@
 // | SHFT |  Z  |  X  |  C  |  V  |  P  |    |  B  |  H   |  ,  |  .  |  /  | SHFT |
 //                    | GUI | LWR | SPC |    | ENT | RSE  | ALT |
                         bindings = <
-   &kp TAB  &kp K &kp W &kp F &kp D &kp Q     &kp J &kp L  &kp U     &kp Y   &kp SQT    &kp BSPC
-   &trans   &kp A &kp R &kp S &kp T &kp G     &kp M &kp N  &kp E     &kp I   &kp O      &kp SEMI
-   &trans   &kp Z &kp X &kp C &kp V &kp P     &kp B &kp H  &kp COMMA &kp DOT &kp FSLH   &kp RSHFT
-                  &trans &trans &trans           &kp RET &trans &kp RALT
+   &kp TAB  &kp K &kp W &kp F &kp D &kp Q        &kp J &kp L  &kp U     &kp Y   &kp SQT    &kp BSPC
+   &trans   &kp A &kp R &kp S &kp T &kp G        &kp M &kp N  &kp E     &kp I   &kp O      &kp SEMI
+   &trans   &kp Z &kp X &kp C &kp V &kp P        &kp B &kp H  &kp COMMA &kp DOT &kp FSLH   &kp RSHFT
+          &kp LGUI &mo LOWER &kp SPACE               &kp RET &mo RAISE &kp RALT
                         >;
                 };
 
@@ -58,7 +42,7 @@
                         bindings = <
    &kp ESC    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5                 &kp N6   &kp N7   &kp N8   &kp N9    &kp N0 &kp BSPC
    &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4           &trans   &kp LEFT &kp UP   &kp RIGHT &trans &trans
-   &kp LSHFT  &tog COLEMK  &trans       &trans       &trans       &reset                 &trans   &kp HOME &kp DOWN &kp END   &trans &trans
+   &kp LSHFT  &trans  &trans       &trans       &trans       &reset                 &trans   &kp HOME &kp DOWN &kp END   &trans &trans
                           	        &kp LGUI     &trans       &kp SPACE                       &kp RET  &trans   &kp RALT
                         >;
                 };
