@@ -15,6 +15,7 @@
 #define FUNCTN 3
 
 &mt {
+    flavor = "balanced";
     tapping-term-ms = <400>;
 };
 
